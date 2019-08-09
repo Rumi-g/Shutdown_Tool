@@ -1,0 +1,12 @@
+！母艦設計=『母艦の可視はオフ』
+MessageBox((母艦の、ハンドル),「再起動しますか？
+保存していないデータは失われます」,「再起動確認」,$121)。
+もし、それが1/*OK*/ならば、"{WINDOWSパス}system32\shutdown.exe /r /t 00"を起動
+もし、それが2/*キャンセル*/ならば、終わる
+●MessageBox(h,t,c,u) =DLL("user32.dll", "int MessageBoxA(
+        HWND hWnd, // handle of owner window
+        LPCTSTR lpText, // address of text in message box
+        LPCTSTR lpCaption, // address of title of message box  
+        UINT uType  // style of message box
+    )")#"
+    
